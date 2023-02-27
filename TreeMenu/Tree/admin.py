@@ -1,5 +1,15 @@
-
 from django.contrib import admin
-from .models import Menu
+from .models import MenuItem
+from .forms import MenuItemForm
 
-admin.site.register(Menu)
+
+class MenuItemInline(admin.StackedInline):
+    model = MenuItem
+    form = MenuItemForm
+
+
+class MenuItemAdmin(admin.ModelAdmin):
+    inlines = [MenuItemInline]
+    form = MenuItemForm
+
+admin.site.register(MenuItem, MenuItemAdmin)
