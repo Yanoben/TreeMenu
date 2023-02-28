@@ -5,6 +5,5 @@ from .views import IndexView
 app_name = 'Tree'
 
 urlpatterns = [
-    path('', IndexView.as_view(), name='index'),
-    path('', IndexView.as_view(), name='index'),
+    path('', IndexView.as_view()),
 ]
